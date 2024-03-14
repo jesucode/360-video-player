@@ -1,0 +1,25 @@
+.fullscreen-input {
+    position: fixed; /* Use fixed or absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7); /* Optional: background style */
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.hidden {
+    display: none;
+}
+
+.fullscreen-video {
+    position: fixed; /* Use fixed or absolute positioning */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    z-index: 9;
+}
