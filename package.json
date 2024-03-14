@@ -5,14 +5,24 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron . "
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@electron-forge/cli": "^7.3.0",
+    "@electron-forge/maker-deb": "^7.3.0",
+    "@electron-forge/maker-rpm": "^7.3.0",
+    "@electron-forge/maker-squirrel": "^7.3.0",
+    "@electron-forge/maker-zip": "^7.3.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.0",
+    "@electron-forge/plugin-fuses": "^7.3.0",
     "electron": "^29.1.3"
   },
   "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
     "videojs-vr": "^2.0.0"
   }
 }
