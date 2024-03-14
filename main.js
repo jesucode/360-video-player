@@ -15,23 +15,7 @@ function createWindow () {
   win.loadFile('index.html')
 }
 
-const iconName = path.join(__dirname, 'iconForDragAndDrop.png')
-const icon = fs.createWriteStream(iconName)
-
-// Create a new file to copy - you can also copy existing files.
-
-https.get('https://img.icons8.com/ios/452/drag-and-drop.png', (response) => {
-  response.pipe(icon)
-})
-
 app.whenReady().then(createWindow)
-
-ipcMain.on('ondragstart', (event, filePath) => {
-  event.sender.startDrag({
-    file: path.join(__dirname, filePath),
-    icon: iconName
-  })
-})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
