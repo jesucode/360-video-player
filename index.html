@@ -11,7 +11,7 @@
 
 <body>
   <div class="fullscreen-input" id="input-container">
-    <label for="myfile">Select a file:</label>
+    <label for="myfile" id="fileLabel"></label>
     <input type="file" id="myfile" name="myfile">
   </div>
   <div class="hidden" id="video-container">
@@ -23,6 +23,30 @@
   <script src="./node_modules/video.js/dist/video.js"></script>
   <script src="./dist/videojs-vr.js"></script>
   <script>
+    document.getElementById('fileLabel').addEventListener('dragover', function (event) {
+      event.preventDefault(); // Prevent default behavior (Prevent file from being opened)
+      event.stopPropagation();
+      this.style.backgroundColor = '#2196F3'; // Optional: Change color on drag over
+    });
+
+    document.getElementById('fileLabel').addEventListener('dragleave', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.style.backgroundColor = '#4CAF50'; // Change back to original color
+    });
+
+    document.getElementById('fileLabel').addEventListener('drop', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.style.backgroundColor = '#4CAF50'; // Change back to original color
+      var files = event.dataTransfer.files; // Get the files that were dropped
+      if (files.length > 0) {
+        document.getElementById('myfile').files = files; // Set the files to the input
+      }
+    });
+
+
+
     document.getElementById('myfile').addEventListener('change', function (event) {
       var file = event.target.files[0];
       var videoContainer = document.getElementById('video-container');

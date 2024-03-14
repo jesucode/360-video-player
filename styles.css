@@ -11,6 +11,57 @@
     z-index: 10; /* Ensure it's above other content */
 }
 
+.fullscreen-input input[type="file"] {
+  width: 80%; /* 80% of the viewport width */
+  height: 80vh; /* 80% of the viewport height */
+  cursor: pointer;
+  border-radius: 10px; /* Optional: for rounded corners */
+  background-color: rgba(76, 175, 80, 0.2); /* Slightly transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em; /* Adjust based on your design */
+  color: #4CAF50; /* Text color */
+  outline: none;
+}
+
+.fullscreen-input input[type="file"]::before {
+    content: ""; /* Initially hides the instructional text */
+  text-align: center;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Ensure the text does not interfere with input functionality */
+}
+
+.fullscreen-input input[type="file"]:hover {
+  background-color: rgba(76, 175, 80, 0.3); /* Darker shade on hover */
+}
+
+.fullscreen-input input[type="file"]:focus {
+  border: 2px solid #45a049; /* Slightly darker border color on focus */
+}
+.fullscreen-input input[type="file"]::file-selector-button {
+  width: 100%; /* Make the button as wide as the input */
+  height: 100%; /* Make the button as tall as the input */
+  cursor: pointer;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Match the input's border-radius */
+  font-size: 8vh; /* Larger font size for the button text */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-input input[type="file"]::file-selector-button:hover {
+  /* Slightly adjust the gradient on hover for a subtle effect */
+  background: linear-gradient(100deg, #6711cb 0%, #2675fc 100%);
+}
+
 .hidden {
     display: none;
 }
